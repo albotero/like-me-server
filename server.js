@@ -13,6 +13,7 @@ app.use(
       !origin || whiteList.includes(origin)
         ? callback(null, true)
         : callback(new Error(`CORS Error: ${origin}`), false),
+    credentials: true,
   })
 )
 app.use(express.json())
